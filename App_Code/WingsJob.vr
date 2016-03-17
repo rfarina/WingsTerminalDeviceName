@@ -1,0 +1,192 @@
+﻿using System
+using System.Text
+using System.Collections.Generic
+using ASNA.VisualRPG.Runtime
+using ASNA.DataGate.Client
+using ASNA.DataGate.DataLink
+using ASNA.DataGate.Common
+
+dclnamespace WingsLogic
+    Begclass WingsJob access(*public) partial(*yes) extends(ASNA.Monarch.WebJob)
+
+        dcldb myDatabase DBName("") VTerm(*MonarchWeb) OpenAccessDspF(*Wings)
+
+        Begfunc getDatabase type(ASNA.VisualRPG.Runtime.Database) access(*protected) modifier(*overrides)
+            leavesr myDatabase
+        Endfunc
+
+        Begsr Dispose access(*public) modifier(*overrides)
+            dclsrparm disposing *boolean
+            if( disposing )
+                Disconnect myDatabase
+            Endif
+            *base.Dispose( disposing )
+        Endsr
+
+        /region LogonScreen
+
+        Begclass LogonInfo
+            dclfld Server *string access(*public) inz("")
+            dclfld User *string access(*public) inz("")
+            dclfld Password *string access(*public) inz("")
+            dclfld Program *string access(*public) inz("")
+            dclfld Menu *string access(*public) inz("")
+            dclfld Library *string access(*public) inz("")
+            dclfld Message *string access(*public) inz("")
+            dclfld Port *integer4 access(*public) inz(5042)
+        Endclass
+
+        BegSr promptLogon access(*private)
+            dclsrparm logonInfo LogonInfo
+
+            dclfld wfSignon ASNA.Monarch.DynamicDisplayFile
+            wfSignon = *new ASNA.Monarch.DynamicDisplayFile( "~/Monarch/SignOn.aspx" )
+            wfSignon.Open()
+
+            dclarray myIndicators dim(100) type(*onechar)
+            myIndicators = *new System.String(o'0', 100 ).ToCharArray()
+
+            logonInfo.Password = ""
+            wfSignon.Write( "RSIGNON", myIndicators, *new ASNA.Monarch.Wings.PopulateBuffer( populateSignonBuffer ), logonInfo )
+            wfSignon.Read()
+            dclfld row System.Data.DataRow
+            row = wfSignon.DataSet.Tables[ "RSIGNON" ].Rows[ 0 ]
+
+            logonInfo.Server = row[ "SYSTEM" ].ToString().Trim()
+            logonInfo.User = row[ "USER" ].ToString().Trim()
+            logonInfo.Password = row[ "PASSWORD" ].ToString().Trim()
+            logonInfo.Port = *decimal.Parse( row[ "PORT" ].ToString() ) *as *integer4
+            logonInfo.Program = row[ "PROGRAM" ].ToString().Trim()
+            logonInfo.Menu = row[ "MENU" ].ToString().Trim()
+            logonInfo.Library = row[ "LIBRARY" ].ToString().Trim()
+            logonInfo.Message = ""
+
+            wfSignon.Close()
+        Endsr
+
+        Begsr populateSignonBuffer
+            dclsrparm formatName *string
+            dclsrparm newRow System.Data.DataRow
+            dclsrparm cookie *object
+
+            dclfld logonInfo LogonInfo 
+            logonInfo = cookie *as LogonInfo
+
+            newRow[ "SYSTEM" ] = logonInfo.Server
+            newRow[ "USER" ] = logonInfo.User
+            newRow[ "PASSWORD" ] = logonInfo.Password
+            newRow[ "PORT" ] = logonInfo.Port
+            newRow[ "PROGRAM" ] = logonInfo.Program
+            newRow[ "MENU" ] = logonInfo.Menu
+            newRow[ "LIBRARY" ] = logonInfo.Library
+            newRow[ "MESSAGE" ] = logonInfo.Message
+        Endsr
+
+        BegSr logon access(*private)
+            dclsrparm parmsHaveValues *boolean
+            dclsrparm libraryName *string by(*reference)
+            dclsrparm programName *string by(*reference)
+            dclsrparm menuName *string by(*reference)
+            dclsrparm message *string
+
+            dclfld logonInfo LogonInfo 
+            logonInfo = *new LogonInfo()
+            if parmsHaveValues
+                logonInfo.Message = message
+                logonInfo.Server = myDatabase.Server
+                logonInfo.User = myDatabase.User
+                logonInfo.Port = myDatabase.Port
+                logonInfo.Library = libraryName
+                logonInfo.Program = programName
+                logonInfo.Menu = menuName
+            endif
+
+            dowhile *true
+                promptLogon( logonInfo )
+
+                myDatabase.Server = logonInfo.Server
+                myDatabase.User = logonInfo.User
+                myDatabase.Password = logonInfo.Password
+                myDatabase.Port = logonInfo.Port
+
+				// rrf add Terminal Device Name
+				myDatabase.TerminalDeviceName = "ABCD123456"
+
+                try
+                    CONNECT myDatabase
+                    leave
+                catch dgEx dgException
+                    logonInfo.Message = dgEx.Message
+                endtry
+            enddo
+            libraryName = logonInfo.Library
+            programName = logonInfo.Program
+            menuName = logonInfo.Menu
+        Endsr
+
+        /endregion
+
+        Begsr ExecuteStartupProgram access(*protected) modifier(*overrides)
+            dclfld libraryName *string
+            dclfld programName *string
+            dclfld menuName *string
+            dclfld message *string
+            dclfld parmsHaveValues *boolean inz(*false)
+
+            dowhile *true
+                logon( parmsHaveValues, *byref libraryName, *byref programName, *byref menuName, message )
+                parmsHaveValues = *true
+
+                try
+                    if( *not *string.IsNullOrWhiteSpace( libraryName ) )
+                        callQCmdExec( "ChgCurLib " + libraryName )
+                    endif
+                catch
+                    Disconnect myDatabase
+                    message = string.Format( "Current library {0} not found", libraryName.ToUpper() )
+                    iterate
+                endtry
+                try
+                    if( *not *string.IsNullOrWhiteSpace( programName ) )
+                         CALL programName DB(myDatabase)
+                    endif
+                catch ex Exception
+                    if ( *not (ex *is ASNA.Monarch.UnsupportedOperationException))
+                        Disconnect myDatabase
+                    endif
+                    message = ex.Message
+                    iterate
+                endtry
+                if *string.IsNullOrWhiteSpace( menuName )
+                    callQCmdExec( "Go Main" )
+                else
+                    try
+                        callQCmdExec( "Go " + menuName )
+                    catch
+                        Disconnect myDatabase
+                        message = string.Format( "Menu {0} does not exist", menuName.ToUpper() )
+                        iterate
+                    endtry
+                endif
+                leave
+            enddo
+        Endsr
+
+        Begsr callQCmdExec access(*private)
+            dclsrparm commandParm *char len(256)
+            dclfld lengthParm *packed len(15,5) inz(256)
+            Try
+                Call "QCmdExc" DB(myDatabase)
+					DclParm commandParm
+					DclParm lengthParm
+            Catch dgEx dgException
+                if( dgEx.Error <> dgErrorNumber.dgEiCONNLOST )
+                    throw dgEx
+                endif
+                Try
+                    Disconnect myDatabase
+                Catch
+                Endtry
+            EndTry
+        Endsr
+    Endclass

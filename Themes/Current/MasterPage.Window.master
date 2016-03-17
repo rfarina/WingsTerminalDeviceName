@@ -1,0 +1,31 @@
+﻿<%@ Master Language="AVR" AutoEventWireup="false" CodeFile="MasterPage.Window.master.vr" Inherits="MasterPageWindow" %>
+<!DOCTYPE html>
+<html lang="en-us">
+<head id="Head1" runat="server">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Window</title>
+<link rel="shortcut icon" href="~/Themes/Current/Images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="~/Themes/Current/Styles/Framework.css">
+<link rel="stylesheet" type="text/css" href="~/Themes/Current/Styles/Theme.css">
+<asp:ContentPlaceHolder runat="server" id="HeaderPH" />
+</head>
+<body>
+<form id="form1" runat="server">
+<div id="wrapper" class="wrapper">
+<div id="content" class="content window clearfix">
+    <div id="fkeys" class="fkeys window">
+        <asp:ContentPlaceHolder ID="FKeyPH" runat="server" />
+    </div><%-- #fkeys --%>
+    <div id="main-content" class="main-content window">
+        <asp:ContentPlaceHolder ID="CenPH" runat="server" />
+    </div><%-- #main-content --%>
+</div><%-- #content --%>
+<div id="message-container" class="message-container">
+    <asp:ContentPlaceHolder ID="MsgPH" runat="server" />
+</div><%-- #message-container --%>
+</div><%-- #wrapper --%>
+</form>
+<asp:ContentPlaceHolder ID="PageScriptPH" runat="server" />
+</body>
+</html>

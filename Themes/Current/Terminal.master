@@ -1,0 +1,36 @@
+﻿<%@ Master Language="AVR" AutoEventWireup="false" CodeFile="Terminal.master.vr" Inherits="Themes_Current_Terminal" %>
+<!DOCTYPE html>
+<html lang="en_US">
+<head id="Head1" runat="server">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ASNA Wings</title>
+<link rel="shortcut icon" href="~/Themes/Current/Images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="~/Themes/Current/Styles/Framework.css">
+<link rel="stylesheet" type="text/css" href="~/Themes/Current/Styles/Theme.css">
+<asp:ContentPlaceHolder runat="server" id="HeaderPH" />
+</head>
+<body class="no-overflow">
+<form id="form1" runat="server">
+<div id="wrapper" class="wrapper">
+<div id="header" class="header">
+    <div class="logo">
+        <img src="<%=Page.ResolveUrl("~")%>Themes/Current/Images/App_logo.png" alt="" />
+    </div>
+</div><!-- #header -->
+<div id="content" class="content clearfix">
+    <div id="fkeys" class="fkeys">
+        <asp:ContentPlaceHolder ID="FKeyPH" runat="server" />
+    </div><!-- #fkeys -->
+    <div id="main-content" class="main-content">
+        <asp:ContentPlaceHolder ID="CenPH" runat="server" />
+    </div><!-- #main-content -->
+</div><!-- #content -->
+<div id="footer" class="footer">
+    <p class="text-center no-vert-margin">&copy;<%=DateTime.Now.Year%> ASNA. All Rights Reserved.</p>
+</div><!-- #footer -->
+</div><!-- #wrapper -->
+</form>
+<asp:ContentPlaceHolder ID="PageScriptPH" runat="server" />
+</body>
+</html>

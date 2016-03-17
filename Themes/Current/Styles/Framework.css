@@ -1,0 +1,1427 @@
+﻿/**
+ * Framework.css 
+ *
+ * This Cascading Stylesheet includes styles that are required by ASNA Wings/Monarch
+ * framework.
+ *
+ * As a rule, do not change the contents of this file.
+ *
+ * If minor changes to site styles are desired, ASNA strongly recommends changing
+ * the Theme.css Cascading Stylesheet, found in the same directory as this file.
+ *
+ * Should you desire to significantly change the branding of your Wings/Monarch project,
+ * ASNA recommends getting the SASS source file structure that will allow you to generate  
+ * Framework.css from https://github.com/ASNA/Wings-Sass,  after you have changed the
+ * parameters described in the _config.scss file.
+ *
+ * To improve performance, you may want to use the "Minified" version of this Cascading 
+ * Stylesheet by getting the SASS source file structure from https://github.com/ASNA/Wings-Sass, 
+ * that will allow you to generate the Framework.min.css, which you can link from your 
+ * MasterPage.master file, replacing the reference to Framework.css.
+ *
+ * To facilitate working with SASS, ASNA recommends installing the Microsoft "Web Essentials"
+ * package for Visual Studio 2013 from here: 
+ *    https://visualstudiogallery.msdn.microsoft.com/56633663-6799-41d7-9df7-0f2a504ca361
+ *
+*/
+/* ==========================================================================
+   ddsConstant
+   ========================================================================== */
+.DdsConstant, .DdsConstant_Right {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: none;
+  padding: 0; }
+
+.DdsConstant_Right {
+  text-align: right; }
+
+/* ==========================================================================
+   ddsCharField
+   ========================================================================== */
+.DdsCharField, .DdsCharField_Error, .DdsCharField_Right_Error, .DdsCharField_OutputOnly, .DdsCharField_Right, .DdsCharField_Right_OutputOnly {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0; }
+
+.DdsCharField_Error, .DdsCharField_Right_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsCharField_OutputOnly {
+  border: none; }
+
+.DdsCharField_Right, .DdsCharField_Right_OutputOnly {
+  text-align: right; }
+
+.DdsCharField_Right_Error {
+  text-align: right; }
+
+.DdsCharField_Right_OutputOnly {
+  border: none; }
+
+/* ==========================================================================
+   ddsDecField
+   ========================================================================== */
+.DdsDecField, .DdsDecField_Error, .DdsDecField_Left_Error, .DdsDecField_OutputOnly, .DdsDecField_Left_OutputOnly, .DdsDecField_Left {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0;
+  text-align: right; }
+
+.DdsDecField_Error, .DdsDecField_Left_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsDecField_OutputOnly, .DdsDecField_Left_OutputOnly {
+  border: 0; }
+
+.DdsDecField_Left {
+  text-align: left; }
+
+.DdsDecField_Left_Error {
+  text-align: left; }
+
+.DdsDecField_Left_OutputOnly {
+  text-align: left;
+  border: 0; }
+
+/* ==========================================================================
+   ddsDecDateField
+   ========================================================================== */
+.DdsDecDateField, .DdsDecDateField_Right, .DdsDecDateField_Error, .DdsDecDateField_OutputOnly {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0; }
+
+.DdsDecDateField_Right {
+  text-align: right; }
+
+.DdsDecDateField_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsDecDateField_OutputOnly {
+  border: none; }
+
+/*
+   DdsDecDateFieldNonAbsolute (with their _Right_XXX and _OutputOnly appended
+   class names) are used by the Toolbox icon, when dragging and dropping
+   to Web Form Designer onto a non-absolute containter.     
+   ========================================================================== */
+.DdsDecDateFieldNonAbsolute, .DdsDecDateFieldNonAbsolute_Error, .DdsDecDateFieldNonAbsolute_Right_Error, .DdsDecDateFieldNonAbsolute_OutputOnly, .DdsDecDateFieldNonAbsolute_Right, .DdsDecDateFieldNonAbsolute_Right_OutputOnly {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0;
+  width: 70%; }
+
+.DdsDecDateFieldNonAbsolute_Error, .DdsDecDateFieldNonAbsolute_Right_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsDecDateFieldNonAbsolute_OutputOnly {
+  border: none; }
+
+.DdsDecDateFieldNonAbsolute_Right, .DdsDecDateFieldNonAbsolute_Right_OutputOnly {
+  text-align: right; }
+
+.DdsDecDateFieldNonAbsolute_Right_Error {
+  text-align: right; }
+
+.DdsDecDateFieldNonAbsolute_Right_OutputOnly {
+  border: none; }
+
+/* ==========================================================================
+   ddsDateField
+   ========================================================================== */
+.DdsDateField, .DdsDateField_Error, .DdsDateField_Right_Error, .DdsDateField_OutputOnly, .DdsDateField_Right, .DdsDateField_Right_OutputOnly {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0; }
+
+.DdsDateField_Error, .DdsDateField_Right_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsDateField_OutputOnly {
+  border: none; }
+
+.DdsDateField_Right {
+  text-align: right; }
+
+.DdsDateField_Right_Error {
+  text-align: right; }
+
+.DdsDateField_Right_OutputOnly {
+  border: none; }
+
+/*
+   DdsDateFieldNonAbsolute (with their _Right_XXX and _OutputOnly appended
+   class names) are used by the Toolbox icon, when dragging and dropping
+   to Web Form Designer onto a non-absolute containter.     
+   ========================================================================== */
+.DdsDateFieldNonAbsolute, .DdsDateFieldNonAbsolute_Error, .DdsDateFieldNonAbsolute_Right_Error, .DdsDateFieldNonAbsolute_OutputOnly, .DdsDateFieldNonAbsolute_Right, .DdsDateFieldNonAbsolute_Right_OutputOnly {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0;
+  width: 70%; }
+
+.DdsDateFieldNonAbsolute_Error, .DdsDateFieldNonAbsolute_Right_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsDateFieldNonAbsolute_OutputOnly {
+  border: none; }
+
+.DdsDateFieldNonAbsolute_Right, .DdsDateFieldNonAbsolute_Right_OutputOnly {
+  text-align: right; }
+
+.DdsDateFieldNonAbsolute_Right_Error {
+  text-align: right; }
+
+.DdsDateFieldNonAbsolute_Right_OutputOnly {
+  border: none; }
+
+/* ==========================================================================
+   ddsTimeField
+   ========================================================================== */
+.DdsTimeField, .DdsTimeField_Error, .DdsTimeField_OutputOnly, .DdsTimeField_Link {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0; }
+
+.DdsTimeField_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsTimeField_OutputOnly {
+  border: none; }
+
+.DdsTimeField_Link {
+  border: none; }
+
+/* ==========================================================================
+   ddsTimestampField
+   ========================================================================== */
+.DdsTimestampField, .DdsTimestampField_Error, .DdsTimestampField_OutputOnly, .DdsTimestampField_Link {
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 13px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 0; }
+
+.DdsTimestampField_Error {
+  color: white;
+  background-color: #c00; }
+
+.DdsTimestampField_OutputOnly {
+  border: none; }
+
+.DdsTimestampField_Link {
+  border: none; }
+
+/* ==========================================================================
+   ddsRecord
+   ========================================================================== */
+.DdsRecord {
+  width: 100%; }
+
+/* ==========================================================================
+   DDS Window Records
+   ========================================================================== */
+.DdsInlinePopUpBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: gray;
+  opacity: 0.7;
+  /* Firefox, Chrome */
+  filter: alpha(opacity=70);
+  /* IE */ }
+
+.DdsInlinePopUpTable {
+  position: absolute;
+  background-color: white;
+  overflow: hidden;
+  z-index: 100;
+  border-collapse: collapse; }
+
+.DdsInlinePopUpContent {
+  width: 100%; }
+
+.DdsInlinePopUpTitle {
+  padding: 4px 10px;
+  height: 20px;
+  color: white;
+  background-color: #333; }
+
+/* ==========================================================================
+   ddsSubfile
+   ========================================================================== */
+.DdsSubfileRecord {
+  width: 100%; }
+
+.DefaultRow {
+  background-color: #f2f2f2; }
+
+.AlternateRow {
+  background-color: white; }
+
+.DdsSubfileSBar {
+  background-image: url(../Images/SBBK.png);
+  background-repeat: repeat-y;
+  cursor: pointer; }
+
+.DdsSubfileSBarUp {
+  background-image: url(../Images/SBUp.png);
+  background-repeat: no-repeat; }
+
+.DdsSubfileSBarDn {
+  background-image: url(../Images/SBDn.png);
+  background-repeat: no-repeat; }
+
+/* ddsSubfile Cursor RRN
+   ========================================================================== */
+.DdsSubfileCandidateCurrentRecord {
+  background-color: #ddd; }
+
+.DdsSubfileCurrentRecord {
+  background-color: #ccc; }
+
+/* ddsSubfile Less, More (for Touch capable devices)
+   ========================================================================== */
+.DdsSubfileLess, .DdsSubfileMore {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 20px;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  height: 32px;
+  background-color: white;
+  color: blue; }
+
+/* ==========================================================================
+   Calendar for ddsDateTime
+   ========================================================================== */
+.CalendarTable {
+  border-collapse: collapse;
+  font-family: "Trebuchet MS", Arial, Tahoma, Sans-serif;
+  font-size: 8px;
+  text-align: center;
+  color: black;
+  cursor: default;
+  background-color: #99ccff;
+  width: 180px;
+  height: 140px; }
+
+.CalendarCloseCell {
+  font-size: 11px; }
+
+.CalendarTitle {
+  font-size: 11px;
+  color: white; }
+
+.CalendarPrevYear {
+  font-size: 11px; }
+
+.CalendarPrevMonth {
+  font-size: 11px; }
+
+.CalendarNextMonth {
+  font-size: 11px; }
+
+.CalendarNextYear {
+  font-size: 11px; }
+
+.CalendarDateCell {
+  width: inherit;
+  font-size: 11px;
+  color: black;
+  background-color: #86aed7;
+  cursor: pointer; }
+
+.CalendarSelDateCell {
+  width: inherit;
+  font-size: 11px;
+  color: #003366;
+  background-color: #ffff66;
+  cursor: pointer; }
+
+.CalendarWeekDayCell {
+  width: 20px;
+  font-size: 11px;
+  color: white;
+  background-color: #3366cc; }
+
+.CalendarTopRow {
+  color: white; }
+
+.CalendarNavRow {
+  font-size: 11px;
+  color: white; }
+
+.CalendarExDateCell {
+  font-size: 11px;
+  background-color: #cdcdcd;
+  cursor: pointer; }
+
+/* ==========================================================================
+   5250 Terminal Emulator
+   ========================================================================== */
+#AsnaTermFacade {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden; }
+
+#AsnaTerm5250 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow: hidden; }
+
+#AsnaTermCursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: monospace;
+  vertical-align: middle;
+  background-color: #d8d8d8;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  z-index: 200; }
+
+.AsnaTermFldTouchableMask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  font-size: 0.5px;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  /* IE */
+  background: none; }
+
+#AsnaTermTextSelection {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: white;
+  opacity: 0.5;
+  /* Firefox, Chrome */
+  filter: alpha(opacity=50);
+  /* IE */ }
+
+#AsnaTermErrMsg {
+  font-family: 'Segoe UI', Arial;
+  color: red; }
+
+pre {
+  font-family: Consolas, monospace; }
+
+/* Consolas font is similar to IBM i Terminal Font */
+#AsnaTermSettingsDialog {
+  position: absolute;
+  background-color: #444444;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+  width: 100%;
+  display: none; }
+
+#AsnaTermSettingsSlider {
+  position: absolute;
+  z-Index: 600;
+  width: 48px;
+  height: 15px;
+  display: none;
+  pointer-events: none; }
+
+.AsnaTermSliderRow {
+  padding: 0;
+  margin: 0;
+  width: 48px;
+  height: 6px;
+  display: block; }
+
+#AsnaTermSettingsOptions {
+  padding-top: 15px;
+  height: 50%; }
+
+.AsnaTermSettingsLabel {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  padding-bottom: 11px; }
+
+#AsnaTermSettingsNotes {
+  margin-left: 20px;
+  font-size: 16px;
+  padding-top: 10px; }
+
+#AsnaTermPREF_Colors {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 80px;
+  height: 35px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #3366CC;
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+#AsnaTermIbmKeyPad {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 700px;
+  height: 49px;
+  background-color: #A5A5A6;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  opacity: 0;
+  display: none;
+  border-radius: 5px;
+  cursor: pointer; }
+
+#AsnaTermStatusBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  display: none;
+  cursor: pointer; }
+
+.AsnaTermIbmBigButton {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 120px;
+  height: 32px;
+  font-size: 18px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 8px black;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  display: none; }
+
+.AsnaTermIbmBigButtonMobile {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 160px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 8px black;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  display: none; }
+
+.AsnaTermGoColorButton {
+  background-color: #006800; }
+
+.AsnaTermGoColorButtonMobile {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.6, #006800), color-stop(0.3, #00c000)); }
+
+.AsnaTermWarningColorButton {
+  background-color: #e97620; }
+
+.AsnaTermWarningColorButtonMobile {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.3, #1754a3), color-stop(0.6, #6eaffa)); }
+
+.AsnaTermFKeyHotSpot {
+  position: absolute;
+  padding: 0;
+  width: 40px;
+  height: 28px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #3366CC;
+  display: none;
+  cursor: pointer; }
+
+.AsnaTermFKeyHotSpotMobile {
+  position: absolute;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 8px black;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.3, #1754a3), color-stop(0.6, #6eaffa));
+  display: none; }
+
+#AsnaTermIbmKeyPad .arrows {
+  fill: #fff; }
+
+.AsnaTermIbmKeyPadButton {
+  position: absolute;
+  padding: 0;
+  left: 2px;
+  top: 4px;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 8px black;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  background-color: #1754a3;
+  cursor: pointer; }
+
+.AsnaTermIbmKeyPadButtonMobile {
+  position: absolute;
+  padding: 0;
+  left: 2px;
+  top: 4px;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 8px black;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.3, #1754a3), color-stop(0.6, #6eaffa)); }
+
+#AsnaTermIbmUserDefKeysPopup {
+  padding: 0;
+  background-color: #e0e0e0;
+  display: none;
+  position: absolute;
+  opacity: 1.0;
+  border-radius: 5px; }
+
+#AsnaTermIbmUserDefKeysPopup .arrows {
+  fill: #000000; }
+
+.AsnaTermIbmPopupSelButton, .AsnaTermIbmPopupSelButtonMobile {
+  position: absolute;
+  padding: 0;
+  width: 80px;
+  height: 40px;
+  background-color: white;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  font-size: 0.8em;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 8px;
+  overflow: visible;
+  cursor: pointer; }
+
+.AsnaTermIbmPopupSelActiveButton {
+  color: #fff;
+  background-color: #0033CC;
+  overflow: visible;
+  cursor: pointer; }
+
+.AsnaTermIbmActionKeyMapTooltip {
+  padding: 2px;
+  border: 1px solid black;
+  color: black;
+  background-color: whitesmoke;
+  font-size: small;
+  display: block;
+  border-radius: 3px; }
+
+#AsnaTermIbmFKeysPopup {
+  background-color: #e0e0e0;
+  display: none;
+  position: absolute;
+  opacity: 1.0;
+  border-radius: 5px; }
+
+#AsnaTermIbmSpecialKeysPopup {
+  background-color: #e0e0e0;
+  display: none;
+  position: absolute;
+  opacity: 1.0;
+  border-radius: 5px; }
+
+.AsnaToggleSwitch {
+  border: 0.1em solid #444;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  width: 5em;
+  height: 2em;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 1.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; }
+
+.AsnaToggleSwitch-wrapper > * {
+  display: block;
+  float: left;
+  height: 2em;
+  line-height: 2em;
+  -webkit-box-shadow: inset 0 0.2em 0.4em rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 0.2em 0.4em rgba(0, 0, 0, 0.75); }
+
+.AsnaToggleSwitch > .AsnaToggleSwitch-wrapper {
+  display: block;
+  width: 8em;
+  height: 2em;
+  color: #fff;
+  overflow: hidden;
+  text-shadow: 0 -0.1em 0 rgba(0, 0, 0, 0.8);
+  filter: dropshadow(color=#000000, offx=0, offy=-1);
+  border-radius: 1em; }
+
+.AsnaToggleSwitch-wrapper > .AsnaToggleSwitch-on {
+  background: #0b0;
+  width: 3em;
+  padding-left: 1em;
+  border-radius: 0.8em 0 0 0.8em; }
+
+.AsnaToggleSwitch-wrapper > .AsnaToggleSwitch-off {
+  background: #b00;
+  width: 3em;
+  padding-right: 1em;
+  text-align: right;
+  border-radius: 0 0.8em 0.8em 0; }
+
+.AsnaToggleSwitch-wrapper > .AsnaToggleSwitch-handle {
+  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(100%, #aaa));
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, #eee 0, #aaa 100%);
+  /* Chrome10+, Safari5.1+ */
+  background: linear-gradient(top, #eee 0, #aaa 100%);
+  width: 2em;
+  margin-left: -5em;
+  -webkit-box-shadow: 0 0.15em 0.4em #000;
+  box-shadow: 0 0.15em 0.4em #000;
+  border: 0.1em solid #999;
+  border-radius: 0.99em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.AsnaToggleSwitchSwipeRight {
+  margin-left: 0; }
+
+.AsnaToggleSwitchSwipeLeft {
+  margin-left: -3em; }
+
+.AsnaTermColors {
+  position: absolute;
+  color: black;
+  background-color: white;
+  left: 20px;
+  top: 20px;
+  width: 600px;
+  height: 395px;
+  z-Index: 1000;
+  display: none; }
+
+.AsnaTermColorsMobile {
+  position: absolute;
+  color: black;
+  background-color: white;
+  left: 20px;
+  top: 20px;
+  width: 825px;
+  height: 600px;
+  z-Index: 1000;
+  display: none;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+  font-size: 16px; }
+
+.AsnaTermColorWheel {
+  position: absolute;
+  left: 350px;
+  top: 33px;
+  cursor: pointer; }
+
+.AsnaTermColorWheelMobile {
+  position: absolute;
+  left: 350px;
+  top: 33px; }
+
+.AsnaTermWhiteHex {
+  position: absolute;
+  left: 393px;
+  top: 246px;
+  cursor: pointer; }
+
+.AsnaTermWhiteHexMobile {
+  position: absolute;
+  left: 434px;
+  top: 444px; }
+
+.AsnaTermGrayWheel {
+  position: absolute;
+  left: 434px;
+  top: 246px;
+  cursor: pointer; }
+
+.AsnaTermGrayWheelMobile {
+  position: absolute;
+  left: 514px;
+  top: 448px; }
+
+.AsnaTermBlackHex {
+  position: absolute;
+  left: 499px;
+  top: 246px;
+  cursor: pointer; }
+
+.AsnaTermBlackHexMobile {
+  position: absolute;
+  left: 644px;
+  top: 442px; }
+
+.AsnaTermColorSample {
+  text-align: center;
+  font-size: medium;
+  float: left;
+  width: 23px;
+  height: 23px; }
+
+.AsnaTermColorSampleMobile {
+  text-align: center;
+  font-size: medium;
+  float: left;
+  width: 23px;
+  height: 28px; }
+
+.AsnaTermColorPreText {
+  padding: 3px 0 0 0;
+  margin: 0; }
+
+.AsnaTermCOLOR_Subtitle {
+  font-weight: bold;
+  color: blue;
+  line-height: 1.5em;
+  padding: 0 0 0 0; }
+
+.AsnaTermCOLOR_Label {
+  font-weight: normal;
+  color: black;
+  line-height: 1.5em;
+  padding: 4px 0 0 4px; }
+
+.AsnaTermCOLOR_SELECTION {
+  position: absolute;
+  top: 0px;
+  left: 5px; }
+
+.AsnaTermCOLOR_ATTR {
+  float: left; }
+
+.AsnaTermCOLOR_ATTR_LIST {
+  list-style-type: none;
+  padding: 0 3px 0 3px; }
+
+.AsnaTermCOLOR_SAMPLE {
+  float: left; }
+
+.AsnaTermCOLOR_SAMPLE_LIST {
+  list-style-type: none;
+  padding: 0 3px 0 3px; }
+
+.AsnaTermCOLOR_COLOR {
+  float: left; }
+
+.AsnaTermCOLOR_COLOR_LIST {
+  list-style-type: none;
+  padding: 0 3px 0 3px; }
+
+.AsnaTermCOLOR_INPUT_HEX {
+  width: 70px;
+  padding: 0px 0px 3px 0px;
+  line-height: 1.2em;
+  height: 16px; }
+
+.AsnaTermCOLOR_INPUT_HEXMobile {
+  width: 70px;
+  padding: 0px 0px 3px 0px;
+  line-height: 1.2em;
+  height: 23px; }
+
+.AsnaTermCOLOR_BKCOLOR {
+  float: left; }
+
+.AsnaTermCOLOR_BKCOLOR_LIST {
+  list-style-type: none;
+  padding: 0 3px 0 3px; }
+
+.AsnaTermCOLOR_OTHER {
+  float: left; }
+
+.AsnaTermCOLOR_OTHER_LIST {
+  list-style-type: none;
+  padding: 0 3px 0 3px; }
+
+.AsnaTermCloseIcon {
+  position: absolute;
+  left: 576px;
+  top: 3px;
+  cursor: pointer; }
+
+.AsnaTermCloseIconMobile {
+  position: absolute;
+  left: 776px;
+  top: 7px; }
+
+.AsnaTermColorLuminance {
+  position: absolute;
+  left: 368px;
+  top: 300px; }
+
+.AsnaTermColorLuminanceMobile {
+  position: absolute;
+  left: 170px;
+  top: 466px; }
+
+.AsnaTermColorLumSlider {
+  padding: 0;
+  width: 150px; }
+
+.AsnaTermColorLumSliderMobile {
+  padding: 0;
+  width: 150px; }
+
+.AsnaTermColorApply {
+  position: absolute;
+  left: 342px;
+  top: 350px;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+.AsnaTermColorApplyMobile {
+  position: absolute;
+  left: 488px;
+  top: 550px;
+  width: 150px;
+  font-size: medium;
+  border-radius: 3px;
+  height: 35px;
+  -webkit-appearance: button; }
+
+.AsnaTermColorDefaults {
+  position: absolute;
+  left: 468px;
+  top: 350px;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+.AsnaTermColorDefaultsMobile {
+  position: absolute;
+  left: 655px;
+  top: 550px;
+  width: 150px;
+  font-size: medium;
+  height: 35px;
+  border-radius: 3px;
+  -webkit-appearance: button; }
+
+/* Terminal Color defaults */
+.AsnaTermDEF_GREEN {
+  color: #00FF00; }
+
+.AsnaTermDEF_BKGD {
+  color: #000000; }
+
+.AsnaTermDEF_BLUE {
+  color: #0099FF; }
+
+.AsnaTermDEF_RED {
+  color: #FF0000; }
+
+.AsnaTermDEF_WHITE {
+  color: #FFFFFF; }
+
+.AsnaTermDEF_TURQUOISE {
+  color: #AFEEEE; }
+
+.AsnaTermDEF_YELLOW {
+  color: #FFFF00; }
+
+.AsnaTermDEF_PINK {
+  color: #FF1493; }
+
+.AsnaTermDEF_CURSOR {
+  color: #FFFFFF; }
+
+.AsnaTermDEF_SEL {
+  color: #FFFFFF; }
+
+/* ==========================================================================
+   ddsBar
+   ========================================================================== */
+.DdsBar {
+  width: 100%;
+  min-height: 2.8em;
+  z-index: 100;
+  background-color: maroon;
+  background-color: #cc0000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(maroon), to(#cc0000));
+  background-image: -webkit-linear-gradient(top, maroon, #cc0000);
+  background-image: -moz-linear-gradient(top, maroon, #cc0000);
+  background-image: -ms-linear-gradient(top, maroon, #cc0000);
+  background-image: -o-linear-gradient(top, maroon, #cc0000);
+  background-image: linear-gradient(top, maroon, #cc0000);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='maroon', EndColorStr='#cc0000'); }
+
+.NavButton, .NavButtonSymbol {
+  /* Short text should have a min. width to be touchable */
+  width: auto;
+  min-width: 4em;
+  height: 2.8em;
+  padding: 0 5px;
+  margin-top: 0.2em;
+  border: 1px solid #ed6c45;
+  line-height: 28px;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: bold;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  vertical-align: middle;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #cc6600;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff9933), to(#cc6600));
+  background-image: -webkit-linear-gradient(top, #ff9933, #cc6600);
+  background-image: -moz-linear-gradient(top, #ff9933, #cc6600);
+  background-image: -ms-linear-gradient(top, #ff9933, #cc6600);
+  background-image: -o-linear-gradient(top, #ff9933, #cc6600);
+  background-image: linear-gradient(top, #ff9933, #cc6600);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ff9933', EndColorStr='#cc6600'); }
+
+.NavButtonSymbol {
+  /* One-letter text should have a min. width to be touchable  (narrower than NavButton) */
+  min-width: 3em; }
+
+.SubmitButton {
+  font-size: 0.8em;
+  font-weight: bold;
+  height: 2.8em;
+  min-width: 4em;
+  color: white;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #17754B;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3ead7b), to(#17754B));
+  background-image: -webkit-linear-gradient(top, #3ead7b, #17754B);
+  background-image: -moz-linear-gradient(top, #3ead7b, #17754B);
+  background-image: -ms-linear-gradient(top, #3ead7b, #17754B);
+  background-image: -o-linear-gradient(top, #3ead7b, #17754B);
+  background-image: linear-gradient(top, #3ead7b, #17754B);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#3ead7b', EndColorStr='#17754B'); }
+
+.SignOnButton, .RightAlignButton {
+  float: right; }
+
+/* ==========================================================================
+   ddsPanel
+   ========================================================================== */
+fieldset {
+  border: 0;
+  font-size: 1.2em; }
+
+.DdsPanel {
+  padding: 2px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid gray;
+  background-color: white; }
+
+.PanelTitle, .PanelTitle_OutputOnly {
+  font-size: 1em;
+  color: white;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 2.2em;
+  text-align: center; }
+
+/* ==========================================================================
+   ddsChart
+   ========================================================================== */
+.DdsChartPanel {
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  border: 0.1em solid black; }
+
+/* ==========================================================================
+   ddsImage
+   ========================================================================== */
+.DdsImageChoose {
+  height: 2.5em;
+  font-size: 0.8em; }
+
+.DdsImageUpload {
+  height: 2.5em;
+  color: white;
+  border: 1px solid #b4df5b;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: green;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4cff00), to(green));
+  background-image: -webkit-linear-gradient(top, #4cff00, green);
+  background-image: -moz-linear-gradient(top, #4cff00, green);
+  background-image: -ms-linear-gradient(top, #4cff00, green);
+  background-image: -o-linear-gradient(top, #4cff00, green);
+  background-image: linear-gradient(top, #4cff00, green);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#4cff00', EndColorStr='green');
+  float: right; }
+
+.DdsImageUpload:disabled {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid gray;
+  color: gray;
+  background-image: none;
+  background-color: white;
+  float: right; }
+
+.DdsImage {
+  margin-left: 5px; }
+
+/* ==========================================================================
+   ddsSignature
+   ========================================================================== */
+.DdsSignature {
+  margin-left: 2%;
+  width: 95%;
+  border: 1px dotted #c0c0c0;
+  -webkit-border-radius: 6px; }
+
+.DdsSignLink {
+  right: 2%; }
+
+.DdsSignEditor, .DdsSignEditorTitle {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+  color: white;
+  background-color: #48474f; }
+
+.DdsSignEditorTitle {
+  border: none;
+  padding: 0;
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold; }
+
+.DdsSignCancelButton, .DdsSignDoneButton, .DdsSignEraseButton {
+  margin: 1em 1em 1em 1em;
+  padding: 0;
+  border: none;
+  color: white;
+  font-size: 0.8em;
+  background-color: #48474F; }
+
+.DdsSignCancelButton {
+  color: orangered; }
+
+.DdsSignDoneButton {
+  font-weight: bold;
+  color: yellow; }
+
+/* ==========================================================================
+   ddsSwitch
+   ========================================================================== */
+.ToggleSwitchLabel {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  height: 2em;
+  width: 7em; }
+
+.ToggleSwitchLabelFocus {
+  text-shadow: 2px 2px 2px #969696; }
+
+.ToggleSwitch {
+  border: 0.1em solid #444;
+  display: inline-block;
+  width: 5em;
+  height: 2em;
+  vertical-align: middle;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 1.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; }
+
+.ToggleSwitch-wrapper > * {
+  display: block;
+  float: left;
+  height: 2em;
+  line-height: 2em;
+  -webkit-box-shadow: inset 0 0.2em 0.4em rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 0.2em 0.4em rgba(0, 0, 0, 0.75); }
+
+.ToggleSwitch > .ToggleSwitch-wrapper {
+  display: block;
+  width: 8em;
+  height: 2em;
+  color: #fff;
+  overflow: hidden;
+  text-shadow: 0 -0.1em 0 rgba(0, 0, 0, 0.8);
+  filter: dropshadow(color=#000000, offx=0, offy=-1);
+  border-radius: 1em; }
+
+.ToggleSwitch-wrapper > .ToggleSwitch-on {
+  background: #0b0;
+  width: 3em;
+  padding-left: 1em;
+  border-radius: 0.8em 0 0 0.8em; }
+
+.ToggleSwitch-wrapper > .ToggleSwitch-off {
+  background: #b00;
+  width: 3em;
+  padding-right: 1em;
+  text-align: right;
+  border-radius: 0 0.8em 0.8em 0; }
+
+.ToggleSwitch-wrapper > .ToggleSwitch-handle {
+  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(100%, #aaa));
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, #eee 0, #aaa 100%);
+  /* Chrome10+, Safari5.1+ */
+  background: linear-gradient(top, #eee 0, #aaa 100%);
+  width: 2em;
+  margin-left: -5em;
+  -webkit-box-shadow: 0 0.15em 0.4em #000;
+  box-shadow: 0 0.15em 0.4em #000;
+  border: 0.1em solid #999;
+  border-radius: 0.99em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.ToggleSwitchSwipeRight {
+  margin-left: 0; }
+
+.ToggleSwitchSwipeLeft {
+  margin-left: -3em; }
+
+.ToggleSwitchRenderAsCheckbox {
+  display: inline-block;
+  width: 5em;
+  height: 2em;
+  vertical-align: middle;
+  overflow: hidden;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; }
+
+.ToggleSwitchRenderAsCheckboxWrapper {
+  display: block;
+  float: left;
+  height: 2em;
+  line-height: 2em; }
+
+/* ==========================================================================
+   ddsTable
+   ========================================================================== */
+.DdsTable {
+  font: normal 12px/150% "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  background: white;
+  border: 1px solid #800000;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+.DdsTable table {
+  border-collapse: collapse;
+  width: 100%; }
+
+.DdsTable table td, .DdsTable table th {
+  padding: 3px 10px; }
+
+.DdsTable table thead th {
+  font-size: 15px;
+  font-weight: bold;
+  border-left: 1px solid #800000;
+  background: webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000), color-stop(1, #cc0000));
+  background: -moz-linear-gradient(center top, #800000 5%, #cc0000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000', endColorstr='#cc0000');
+  background-color: #800000;
+  color: white; }
+
+.DdsTable table thead th.DdsTableCharColumn {
+  text-align: left; }
+
+.DdsTable table thead th.DdsTableBinaryColumn,
+.DdsTable table thead th.DdsTablePackedColumn,
+.DdsTable table thead th.DdsTableZonedColumn {
+  text-align: right; }
+
+.DdsTable table thead th:first-child {
+  border: none; }
+
+.DdsTable table tbody tr.DdsTableGroupHeading th {
+  font-size: 13px;
+  font-weight: bold;
+  border-left: 1px solid #a70000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000), color-stop(1, #cc0000));
+  background: -moz-linear-gradient(center top, #800000 5%, #cc0000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000', endColorstr='#cc0000');
+  background-color: #800000;
+  color: white;
+  text-align: left; }
+
+.DdsTable table tbody td {
+  font-size: dds-table-table-thead-th-font-size-3px;
+  font-weight: normal;
+  border-left: 1px solid #f4eded;
+  color: black; }
+
+.DdsTable table tbody td.DdsTableCharColumn {
+  text-align: left; }
+
+.DdsTable table tbody td.DdsTableBinaryColumn,
+.DdsTable table tbody td.DdsTablePackedColumn,
+.DdsTable table tbody td.DdsTableZonedColumn {
+  text-align: right; }
+
+.DdsTable table tbody .alt td {
+  background: #ffdbdb;
+  color: black; }
+
+.DdsTable table tbody tr.DdsTableSelectedRow {
+  background: #ffa8a8;
+  color: black; }
+
+.DdsTable table tbody td:first-child {
+  border-left: none; }
+
+.DdsTable table tbody tr:last-child td {
+  border-bottom: none; }
+
+/* When Page submits, cover all elements with a semi-transparent layer to avoid input */
+.SubmitWait {
+  background-color: LightGray;
+  opacity: 0.7;
+  /* Firefox, Chrome */
+  filter: alpha(opacity=70);
+  /* IE */ }
+
+/* If the response has not come within 2 seconds, show a Spinning Wheel */
+.SubmitWait_2Seconds {
+  background-image: url("../Images/SubmitWait.gif");
+  background-repeat: no-repeat;
+  background-position: center; }

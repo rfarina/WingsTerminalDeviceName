@@ -1,0 +1,50 @@
+﻿<%@ Master Language="AVR" AutoEventWireup="false" CodeFile="MasterPage.master.vr" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html lang="en_US">
+<head runat="server">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>ASNA App</title>
+   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+   <meta name="apple-itunes-app" content="app-id=717414416" />
+   <link rel="apple-touch-icon" href="~/Themes/Current/Images/TabletHomeScreenIcon.png"/>
+   <script type="text/javascript">
+      MonarchSelectFocusField = true;
+   </script>
+   <link rel="shortcut icon" href="~/Themes/Current/Images/favicon.ico">
+   <link rel="stylesheet" type="text/css" href="~/Themes/Current/Styles/Framework.css">
+   <link rel="stylesheet" type="text/css" href="~/Themes/Current/Styles/Theme.css">
+   <asp:ContentPlaceHolder runat="server" id="HeaderPH" />
+</head>
+<body>
+<form id="form1" runat="server">
+<div id="wrapper" class="wrapper">
+<div id="header" class="header">
+    <div class="logo">
+        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Themes/Current/Images/App_logo.png" />
+    </div>
+</div><%-- #header --%>
+<div id="content" class="content clearfix">
+    <div id="fkeys" class="fkeys">
+        <asp:ContentPlaceHolder ID="FKeyPH" runat="server" />
+    </div><%-- #fkeys --%>
+    <div id="main-content" class="main-content">
+        <asp:ContentPlaceHolder ID="CenPH" runat="server" />
+    </div><%-- #main-content --%>
+</div><%-- #content --%>
+<div id="message-container" class="message-container">
+    <asp:ContentPlaceHolder ID="MsgPH" runat="server" />
+</div><%-- #message-container --%>
+<div id="diagnostics" class="diagnotics text-center">
+    <a id="showDiagnostics" href="../monarch/showdisplayfiledata.aspx" target="_blank">Show display file data</a>
+</div><%-- #diagnotics --%>
+<div id="footer" class="footer">
+    <p class="text-center">&copy;<%=DateTime.Now.Year%> ASNA. All Rights Reserved.</p>
+</div><%-- #footer --%>
+</div><%-- #wrapper --%>
+</form>
+<asp:ContentPlaceHolder ID="PageScriptPH" runat="server" />
+</body>
+</html>
