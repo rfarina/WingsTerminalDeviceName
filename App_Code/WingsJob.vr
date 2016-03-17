@@ -26,14 +26,14 @@ dclnamespace WingsLogic
         /region LogonScreen
 
         Begclass LogonInfo
-            dclfld Server *string access(*public) inz("")
-            dclfld User *string access(*public) inz("")
+            dclfld Server *string access(*public) inz("cypress")
+            dclfld User *string access(*public) inz("rickso")
             dclfld Password *string access(*public) inz("")
-            dclfld Program *string access(*public) inz("")
+            dclfld Program *string access(*public) inz("custinq")
             dclfld Menu *string access(*public) inz("")
-            dclfld Library *string access(*public) inz("")
+            dclfld Library *string access(*public) inz("WNGBAS")
             dclfld Message *string access(*public) inz("")
-            dclfld Port *integer4 access(*public) inz(5042)
+            dclfld Port *integer4 access(*public) inz(5140)
         Endclass
 
         BegSr promptLogon access(*private)
@@ -149,6 +149,11 @@ dclnamespace WingsLogic
                 try
                     if( *not *string.IsNullOrWhiteSpace( programName ) )
                          CALL programName DB(myDatabase)
+                         
+                         // rrf add to return to signon once program returns
+                         Disconnect myDatabase
+						 message = *blanks
+                         iterate
                     endif
                 catch ex Exception
                     if ( *not (ex *is ASNA.Monarch.UnsupportedOperationException))
