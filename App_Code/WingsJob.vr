@@ -111,7 +111,8 @@ dclnamespace WingsLogic
 
 				// rrf add Terminal Device Name
 				// myDatabase.TerminalDeviceName = "ABCD123456"
-				myDatabase.TerminalDeviceName = "DEVICE99??"
+				// myDatabase.TerminalDeviceName = "DEVICE99??"
+				myDatabase.TerminalDeviceName = "MYDEV???"
 
                 try
                     CONNECT myDatabase
